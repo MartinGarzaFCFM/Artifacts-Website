@@ -1,0 +1,21 @@
+# Ignore node_modules (common for both client and server)
+node_modules/
+
+# Ignore build artifacts (e.g., compiled code, bundled files)
+build/
+dist/
+.next/
+.out/
+
+# Ignore environment files (e.g., .env, .env.local)
+.env*
+.env.local
+
+# Ignore client-specific build folders
+/client/build/
+/client/.next/
+/client/logs
+
+# Ignore server-specific build folders
+/server/dist/
+/server/.out/

@@ -48,7 +48,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Consigue un artifact y sus datos para una desplegarlos una pagina.
+
 CREATE OR REPLACE FUNCTION get_artifact_page_data(p_artifact_id INT)
 RETURNS TABLE (
     artifact_id INT,

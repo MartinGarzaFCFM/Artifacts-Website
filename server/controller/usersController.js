@@ -8,9 +8,7 @@ const getAllUsers = async (req, res) => {
     res.status(200).json({
       status: "success",
       results: results.rows.length,
-      data: {
-        users: results.rows,
-      },
+      data: results.rows,
     });
   } catch (error) {
     res.status(500).json({
@@ -34,9 +32,7 @@ const getAnUserById = async (req, res) => {
       res.status(200).json({
         status: "success",
         results: results.rows.length,
-        data: {
-          user: results.rows[0],
-        },
+        data: results.rows[0]
       });
     }
     else {

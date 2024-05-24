@@ -1,7 +1,7 @@
 version: '2'
 services:
   client:
-    image: webapp-client
+    image: mhart/alpine-node:6.8.0
     restart: always
     ports:
       - "3000:3000"

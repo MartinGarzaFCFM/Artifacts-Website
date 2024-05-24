@@ -1,28 +1,15 @@
-version: '2'
+version: "3"
 services:
-  client:
-    image: mhart/alpine-node:6.8.0
-    restart: always
-    ports:
+  react-app:
+    image: react-app
+    stdin_open: true
+    ports: 
       - "3000:3000"
-    volumes:
-      - ./client:/client
-      - /client/node_modules
-    links:
-      - api
     networks:
-      - webappnetwork
-
-  api:
-    image: webapp-api
-    restart: always
+      - mern-app
+  api-server:
+    image: api-server
     ports:
-      - "9000:9000"
-    volumes:
-      - ./server:/server
-      - /api/node_modules
+      - "5000:5000"
     networks:
-      - webappnetwork
-
-networks:
-  webappnetwork:
+      - mern-app

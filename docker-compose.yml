@@ -1,24 +1,25 @@
-version: '3.7'
+version: '2'
 services:
   client:
-    build:
-      context: ./client
-      dockerfile: dockerfile
-
-    container_name: client
+    image: webapp-client
+    restart: always
     ports:
-      - "80:80"
-    depends_on:
-      - server
+      -"3000:3000"
+    volumes:
+      -./client:/client
+      -/client/node_modules
+    links:
+      -api
+    networks:
+      - webappnetwork
 
-  server:
-    build:
-      context: ./server
-      dockerfile: dockerfile
-
-    container_name: server
+  api:
+    image: webapp-api
+    restart: always
     ports:
-      - "5000:5000"
-    env_file: ./server/.env
-    environment:
-      NODE_ENV: development
+      - "9000:9000"
+    volumes:
+      -./api:/api
+      -/api/node_modules
+    networks:
+      - webappnetwork

@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import {ArtifactsNavbar} from './ArtifactsNavbar'
+import { HomeGalleryList } from "../features/homeGallery/homeGalleryList";
 
 const Public = () => {
   const content = (
     <section className="public">
-        <h1 >
-          Welcome to <span className="nowrap">Dan D. Repairs!</span>
-        </h1>
+      <ArtifactsNavbar />
+      <HomeGalleryList />
       <main className="public__main">
         <p>
           Located in Beautiful Downtown Foo City, Dan D. Repairs provides a

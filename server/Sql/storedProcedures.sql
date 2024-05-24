@@ -30,7 +30,8 @@ RETURNS TABLE (
     user_id INT,
     created_at TIMESTAMP,
     image_id INT,
-    filename VARCHAR
+    filename VARCHAR,
+    image BYTEA
 ) AS $$
 BEGIN
     RETURN QUERY
@@ -41,7 +42,8 @@ BEGIN
         a.user_id,
         a.created_at,
         i.id AS image_id,
-        i.filename
+        i.filename,
+        i.image
     FROM artifacts a
     JOIN images i ON a.image_id = i.id
     ORDER BY a.id DESC;

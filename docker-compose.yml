@@ -4,12 +4,12 @@ services:
     image: webapp-client
     restart: always
     ports:
-      -"3000:3000"
+      - "3000:3000"
     volumes:
-      -./client:/client
-      -/client/node_modules
+      - ./client:/client
+      - /client/node_modules
     links:
-      -api
+      - api
     networks:
       - webappnetwork
 
@@ -19,7 +19,10 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      -./api:/api
-      -/api/node_modules
+      - ./api:/api
+      - /api/node_modules
     networks:
       - webappnetwork
+
+networks:
+  webappnetwork:

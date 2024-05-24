@@ -19,7 +19,7 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - ./api:/api
+      - ./server:/server
       - /api/node_modules
     networks:
       - webappnetwork

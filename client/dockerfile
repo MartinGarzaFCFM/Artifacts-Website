@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Build the React application
-RUN npm run build
+RUN npm start
 
 # Use a minimal web server to serve static files
 FROM nginx:alpine

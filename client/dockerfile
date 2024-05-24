@@ -5,7 +5,7 @@ FROM node:22.1.0
 WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY package*.json ./
+COPY package.json .
 
 # Install dependencies
 RUN npm install
@@ -16,9 +16,11 @@ COPY . .
 # Build the React application
 RUN npm start
 
-# Use a minimal web server to serve static files
-FROM nginx:alpine
-COPY --from=0 /app/build /usr/share/nginx/html
+# Stage-2
+FROM nginx:1.25.2-alpine-slim
+
+# Copy the static file to my Nginx folder to serve static contain
+COPY --from=builder /app/build /usr/share/nginx/html
 
 # Expose the port the app runs on
 EXPOSE 80

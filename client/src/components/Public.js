@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
 import {ArtifactsNavbar} from './ArtifactsNavbar'
-import { HomeGalleryList } from "../features/homeGallery/homeGalleryList";
 
 const Public = () => {
   const content = (
     <section className="public">
       <ArtifactsNavbar />
-      <HomeGalleryList />
       <main className="public__main">
         <p>
           Located in Beautiful Downtown Foo City, Dan D. Repairs provides a

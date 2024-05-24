@@ -8,8 +8,8 @@ dist/
 .out/
 
 # Ignore environment files (e.g., .env, .env.local)
-.env*
-.env.local
+# .env*
+# .env.local
 
 # Ignore client-specific build folders
 /client/build/

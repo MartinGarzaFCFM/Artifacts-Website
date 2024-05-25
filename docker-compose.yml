@@ -5,4 +5,11 @@ services:
     environment:
       NODE_ENV: development
     ports:
+      - 3500:3500
+  client:
+    build:
+        context: ./client
+    environment:
+       NODE_ENV: development
+    ports:
       - 3000:3000
